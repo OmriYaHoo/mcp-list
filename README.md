@@ -7,7 +7,7 @@ A comprehensive list of MCP (Model Context Protocol) servers compiled from vario
 ## Table of Contents
 
 - **[Development & Debugging](#development--debugging)** (7): [Sentry](#sentry-mcp-server), [SpotlightJS](#spotlightjs-mcp-server), [Chrome DevTools](#chrome-devtools-mcp-server), [Playwright](#playwright-mcp-server), [Browser MCP](#browser-mcp), [Sequential Thinking](#sequential-thinking-mcp-server), [Vibe Check](#vibe-check-mcp)
-- **[Documentation & Research](#documentation--research)** (3): [Context7](#context7-mcp-server), [Ref](#ref-mcp-server), [Perplexity](#perplexity-mcp)
+- **[Documentation & Research](#documentation--research)** (4): [Context7](#context7-mcp-server), [Ref](#ref-mcp-server), [Perplexity](#perplexity-mcp), [YouTube Transcript](#youtube-transcript-mcp-server)
 - **[Framework-Specific](#framework-specific)** (4): [Nuxt](#nuxt-mcp-server), [Svelte](#svelte-mcp-server), [Flutter](#flutter-mcp), [Shadcn Registry](#shadcn-registry-mcp-server)
 - **[Cloud & Infrastructure](#cloud--infrastructure)** (4): [Cloudflare](#cloudflare-mcp-servers), [Vercel](#vercel-mcp-server), [Docker](#docker-mcp), [Kubernetes](#kubernetes-mcp)
 - **[Google Services](#google-services)** (5): [Google Maps](#google-maps-mcp), [BigQuery](#bigquery-mcp), [Google Compute](#google-compute-mcp), [Google Workspace](#google-workspace-mcp), [Google Analytics](#google-analytics-mcp)
@@ -284,6 +284,31 @@ claude mcp add perplexity -e PERPLEXITY_API_KEY=YOUR_API_KEY -- npx -y @perplexi
       "env": {
         "PERPLEXITY_API_KEY": "YOUR_API_KEY"
       }
+    }
+  }
+}
+```
+
+---
+
+### YouTube Transcript MCP Server
+
+Retrieves transcripts from YouTube videos, enabling AI assistants to access video content in text form. Features include fetching transcripts with or without timestamps, video metadata retrieval, multi-language support, and automatic pagination for long transcripts (over 50,000 characters). Supports proxy configuration for restricted environments.
+
+🔗 [GitHub](https://github.com/jkawamoto/mcp-youtube-transcript)
+
+**CLI Installation:**
+```bash
+claude mcp add youtube-transcript -- uvx --from git+https://github.com/jkawamoto/mcp-youtube-transcript mcp-youtube-transcript
+```
+
+**JSON Configuration:**
+```json
+{
+  "mcpServers": {
+    "youtube-transcript": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/jkawamoto/mcp-youtube-transcript", "mcp-youtube-transcript"]
     }
   }
 }
